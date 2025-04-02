@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    
+    .btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: grey;
+            color: white;
+            font-size: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    .container{
+            display: grid;
+            grid-template-columns: repeat(4, 40px);
+            gap: 5px;
+            
+    }
+    
+    </style>
+    <div class="container">
+        
+
+        <button class="btn"  onclick="result=''; document.querySelector('.res').innerHTML=result;">AC</button>
+        <button class="btn"  onclick="result+='%'; document.querySelector('.res').innerHTML=result;">%</button>
+        <button class="btn" onclick="backspace()">x</button>
+        <button class="btn"  onclick="result+='/'; document.querySelector('.res').innerHTML=result;">/</button>
+        <button class="btn" onclick="result+='7'; document.querySelector('.res').innerHTML=result;">7</button>
+        <button class="btn"  onclick="result+='8';document.querySelector('.res').innerHTML=result;">8</button>
+        <button class="btn"  onclick="result+='9'; document.querySelector('.res').innerHTML=result;">9</button>
+        <button class="btn"  onclick="result+='*'; document.querySelector('.res').innerHTML=result;">*</button>
+        <button class="btn"  onclick="result+='4' ;document.querySelector('.res').innerHTML=result;">4</button>
+        <button class="btn" onclick="result+='5'; document.querySelector('.res').innerHTML=result;">5</button>
+        <button class="btn" onclick="result+='6' ;document.querySelector('.res').innerHTML=result;">6</button>
+        <button class="btn" onclick="result+='-' ;document.querySelector('.res').innerHTML=result;">-</button>
+        <button class="btn" onclick="result+='1' ;document.querySelector('.res').innerHTML=result;">1</button>
+        <button class="btn" onclick="result+='2' ;document.querySelector('.res').innerHTML=result;">2</button>
+        <button class="btn" onclick="result+='3' ;document.querySelector('.res').innerHTML=result;">3</button>
+        <button class="btn" onclick="result+='+' ;document.querySelector('.res').innerHTML=result;">+</button>
+        <button class="btn" onclick="result+='00'; document.querySelector('.res').innerHTML=result;">00</button>
+        <button class="btn" onclick="result+='0' ;document.querySelector('.res').innerHTML=result;">0</button>
+        <button class="btn" onclick="result+='.' ;document.querySelector('.res').innerHTML=result;">.</button>
+        <button class="btn" onclick="result=eval(result);
+        document.querySelector('.res').innerHTML=result;" >=</button>
+        <h2 class="res"></h2>
+</div>
+</body>
+<script>
+
+    let result="";
+    function backspace()
+    {
+        if(result==null){
+                result='';
+            }
+            else{
+            let a='';
+            //for(let i=0;i<result.length-1;i++){
+             //   a+=result[i];
+            //}
+            result=result.slice(0,result.length-1);
+        }
+        document.querySelector('.res').innerHTML=result;
+    }
+       
+       
+</script>
+</html>
